@@ -1,0 +1,28 @@
+.h1 {
+    position: relative;
+}
+
+.h1::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: #0ea5e9;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 3s linear infinite;
+    -webkit-animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        width: 100px;
+    }
+    50% {
+        width: 300px;
+    }
+    100% {
+        width: 100px;
+    }
+}

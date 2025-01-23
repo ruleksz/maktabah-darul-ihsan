@@ -1,0 +1,60 @@
+.h2 {
+    position: relative;
+}
+
+.h2::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: #0ea5e9;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 2s linear infinite;
+    -webkit-animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        width: 100px;
+    }
+    50% {
+        width: 200px;
+    }
+    100% {
+        width: 100px;
+    }
+}
+
+/* Container untuk menahan animasi */
+.typing-container {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 20ch;
+    border-right: 2px solid #0988f0;
+    animation: typing 7s steps(20) infinite, blink 0.5s step-end infinite;
+    -webkit-animation: typing 7s steps(20) infinite, blink 0.5s step-end infinite;
+}
+  
+  /* Animasi mengetik */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 20ch; /* Sesuaikan dengan jumlah karakter teks */
+    }
+  }
+  
+  /* Animasi kedip kursor */
+  @keyframes blink {
+    from {
+      border-right-color: #0ea5e9;
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  
